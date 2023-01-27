@@ -28,7 +28,7 @@ variables:
     vacuum_name: "{{ vacuum.split('.')[1] }}"
     current_room: "sensor.{{ vacuum_name }}_current_room"
     switch: "switch.{{ vacuum_name }}_obstacle_avoidance"
-    tight: "switch.{{ vacuum_name }}_tight_mopping
+    tight: "switch.{{ vacuum_name }}_tight_mopping"
 
 trigger:
   - platform: state
