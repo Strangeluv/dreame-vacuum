@@ -28,14 +28,10 @@ variables:
     vacuum_name: "{{ vacuum.split('.')[1] }}"
     current_room: "sensor.{{ vacuum_name }}_current_room"
     switch: "switch.{{ vacuum_name }}_obstacle_avoidance"
-    camera: "camera.{{ vacuum_name }}_map"
 
 trigger:
   - platform: state
     entity_id: !input vacuum
-  - platform: state
-    entity_id: "{{ camera }}"
-    attribute: vacuum_position
   - platform: state
     entity_id: "{{ current_room }}"
 
