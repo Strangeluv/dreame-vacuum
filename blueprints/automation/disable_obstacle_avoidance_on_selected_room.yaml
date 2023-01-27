@@ -32,8 +32,6 @@ variables:
 trigger:
   - platform: state
     entity_id: !input vacuum
-  - platform: state
-    entity_id: "{{ current_room }}"
 
 condition: "{{ (not is_state(current_room, 'unavailable') and ((is_state(switch, 'on') and is_state_attr(current_room, 'room_id', room_id)) or is_state(switch, 'off'))) }}"
 
