@@ -29,9 +29,13 @@ variables:
     current_room: "sensor.{{ vacuum_name }}_current_room"
     switch: "switch.{{ vacuum_name }}_obstacle_avoidance"
 
+#trigger:
+#  - platform: state
+#    entity_id: !input vacuum
+
 trigger:
-  - platform: state
-    entity_id: !input vacuum
+  - platform: template
+    value_template: "{{ is_state_attr('sensor.dreamebot_l10s_pro_current_room','room_id', room_id) }}"
 
 condition: "{{ (not is_state(current_room, 'unavailable') and ((is_state(switch, 'on') and is_state_attr(current_room, 'room_id', room_id)) or is_state(switch, 'off'))) }}"
 
