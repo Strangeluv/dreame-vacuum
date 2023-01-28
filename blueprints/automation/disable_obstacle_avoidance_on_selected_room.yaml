@@ -1,6 +1,6 @@
 ---
 blueprint:
-    name: Disable obstacle avoidance on selected room
+    name: Disable obstacle avoidance on entering room
     description: Disable/Enable obstacle avoidance according to the robots current room
     domain: automation
     source_url: https://github.com/Strangeluv/dreame-vacuum/blob/master/blueprints/automation/disable_obstacle_avoidance_on_selected_room.yaml
